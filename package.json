@@ -1,6 +1,8 @@
 {
   "name": "electron-quick-start",
+    "productName": "Raspberry Pi Remote Desktop",
   "version": "1.0.0",
+    "electronVersion":"4.0.3",
   "description": "Simple application for remote desktop into Raspberry Pi",
   "main": "main.js",
   "scripts": {
