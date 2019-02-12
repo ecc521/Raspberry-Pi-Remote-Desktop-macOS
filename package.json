@@ -1,0 +1,22 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "Simple application for remote desktop into Raspberry Pi",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/ecc521/Raspberry-Pi-Remote-Desktop-macOS",
+  "keywords": [
+    "Raspberry",
+    "Pi",
+    "Remote",
+    "Desktop",
+    "Mac"
+  ],
+  "author": "Tucker Willenborg",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "electron": "^4.0.3"
+  }
+}

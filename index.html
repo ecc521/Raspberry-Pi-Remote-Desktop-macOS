@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Remote Desktop Setup</title>
+  </head>
+  <body>
+    <h1>Remote Desktop Setup</h1>
+
+      <input type="text" id="address" style="width:50%" placeholder="Target Device IP Address" value="192.168.1.">
+      <br>
+      <input type="text" id="username" style="width:50%" placeholder="Username on Target Device">
+      <br>
+      <input type="password" id="password" style="width:50%" placeholder="Password on Target Device">
+      <br>
+      <button onclick="remoteDesktop()">Start Remote Desktop</button>
+      <br>
+      <pre id="output"></pre>
+      <br>
+      <div id="devices">
+      <p>Please wait... Devices should appear here momentarily</p>
+      </div>
+      
+      <style>
+          
+          #devices > div > span {display:inline-block}
+          
+          #devices > div > span:nth-child(1) {
+              width:30%
+          }
+          #devices > div > span:nth-child(2) {
+              width:20%
+          }          
+          #devices > div > span:nth-child(3) {
+              width:20%
+          }
+          #devices > div > span:nth-child(4) {
+              width:30%
+          }      
+          
+          
+          
+      </style>
+      
+    <script>
+      // You can also require other files to run in this process
+        require('./scanner.js')
+        require("./arp.js")
+        require("./render.js")
+        require("./remote.js")
+        require("./password.js")
+        
+        alert("Make sure your pi has SSH enabled. Please note that sudo passwords are currently unsupported")
+
+    </script>
+      
+  </body>
+</html>
