@@ -7,6 +7,10 @@
   <body>
     <h1>Remote Desktop Setup</h1>
 
+        <p>When you open this app for the first time after logging off, please wait 30 seconds for devices to show up below - we scan your entire local network<br>
+    Make sure your pi has SSH enabled. Please note that sudo passwords are currently unsupported
+      </p>
+
       <input type="text" id="address" style="width:50%" placeholder="Target Device IP Address" value="192.168.1.">
       <br>
       <input type="text" id="username" style="width:50%" placeholder="Username on Target Device">
@@ -18,7 +22,6 @@
       <pre id="output"></pre>
       <br>
       <div id="devices">
-      <p>Please wait... Devices should appear here momentarily</p>
       </div>
       
       <style>
@@ -50,7 +53,6 @@
         require("./remote.js")
         require("./password.js")
         
-        alert("Make sure your pi has SSH enabled. Please note that sudo passwords are currently unsupported")
 
     </script>
       

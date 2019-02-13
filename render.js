@@ -1,10 +1,5 @@
 async function updateDevices() {
-    
-    let deviceElem = document.getElementById("devices");
-    while (deviceElem.firstChild) {
-        deviceElem.removeChild(deviceElem.firstChild);
-    }
-    
+        
     function createItem(name, ip, available, mac) {
         let item = document.createElement("div")
         
@@ -22,11 +17,20 @@ async function updateDevices() {
     }
     
     
+    
+    
+    let devices = await getDevices() //Load the devices first... This may take some time 
+
+    //Delete any elements currently present
+    let deviceElem = document.getElementById("devices");
+    while (deviceElem.firstChild) {
+        deviceElem.removeChild(deviceElem.firstChild);
+    }
+    
+    //Add the header
     document.getElementById("devices").appendChild(createItem("Device Name", "IP Address", "Reachable", "MAC Address"))
-    
-    
-    let devices = await getDevices()
-    
+
+    //Add the devices
     for (let i=0;i<devices.length;i++) {
         document.getElementById("devices").appendChild(createItem(devices[i].name, devices[i].ip, devices[i].reachable, devices[i].mac))
     }

@@ -48,6 +48,8 @@ global.remoteDesktop = async function() {
 			stdio: [ 'pipe', "pipe", "pipe" ]
 		})
         
+		window.ssh = ssh
+
         
         await new Promise((resolve,reject) => {
 		ssh.stderr.on("data", function(data) {
@@ -67,15 +69,26 @@ global.remoteDesktop = async function() {
             }
 		})
             
-        //ssh.stdin.write("yes\n") //Add ECDSA key if that was what the prompt actually was
-
         })
 
         
 
         ssh.stdin.write("sudo apt-get install tightvncserver\nY\n")
 
-        await sleep(4000)
+            await sleep(500)
+
+    
+        await new Promise((resolve,reject) => {
+            
+            ssh.stdout.on("data", (data) => {
+                if (data.toString("utf8").indexOf("$") !== -1) {
+                    console.log(data.toString("utf8"))
+                    resolve()
+                }
+            })
+            
+        })
+    
 
         let vncpassword = global.generatePassword(8)
         
@@ -96,10 +109,7 @@ global.remoteDesktop = async function() {
     
     ssh.stdin.write("n\n")
 
-    
-		window.ssh = ssh
-		//ssh.on("close", resolve)
-        
+            
     
     
 }
