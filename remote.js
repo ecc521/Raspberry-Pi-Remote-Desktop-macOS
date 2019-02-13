@@ -31,10 +31,6 @@ async function piReady(username, ip, vncpassword) {
 }
 
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 
 global.remoteDesktop = async function() {
     
