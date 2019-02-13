@@ -1,7 +1,4 @@
-First (somewhat) working build!
-Quite a bit to clean up, but it works (at least when I tested it - I'm almost positive it will break for you as of now)
-
 How to install:
-Simply download electron-quick-start.app.zip
-Unzip the archive
-Double click!
+- Download the latest release at https://github.com/ecc521/Raspberry-Pi-Remote-Desktop-macOS/release
+- Unzip the archive
+- Open the app (Note: I don't currently pay Apple $99 per year to get a developer certificate - so you likely will have to go into System Preferences > Security and Privacy > Click "Open Anyway")
