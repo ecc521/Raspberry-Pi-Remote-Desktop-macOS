@@ -72,42 +72,35 @@ global.remoteDesktop = async function() {
         })
 
         
-
-        ssh.stdin.write("sudo apt-get install tightvncserver\nY\n")
-
-            await sleep(500)
-
-    
-        await new Promise((resolve,reject) => {
-            
-            ssh.stdout.on("data", (data) => {
-                if (data.toString("utf8").indexOf("$") !== -1) {
-                    console.log(data.toString("utf8"))
-                    resolve()
-                }
-            })
-            
-        })
-    
-
+        ssh.stdin.write("rm $HOME/.vnc/passwd\n") //Make sure the password is set on server startup
         let vncpassword = global.generatePassword(8)
+    
+    
+        let installCommand = "sudo apt-get -y install tightvncserver"
+        let vncCommand = "vncserver -geometry " + screen.width + "x" + screen.height + " -depth 24"
         
+    ssh.stdin.write(installCommand + " && " + vncCommand + "\n")
+
+    
+    
+    
+    ssh.stdout.on("data", function(data) {
         
-        ssh.stdin.write("rm $HOME/.vnc/passwd\n") //Make sure the password is set on next step
+        let string = data.toString("utf8")
+        if (string.includes("Password:")) {
+            ssh.stdin.write(vncpassword + "\n")
+        }
+        if (string.includes("Verify:")) {
+            ssh.stdin.write(vncpassword + "\n")
+        }
+        if (string.includes("Would you like to enter a view-only password (y/n)?")) {
+            ssh.stdin.write("n\n")
+        }
+    }) 
+
         
-        await sleep(500)
-        ssh.stdin.write("vncserver :1 -geometry " + screen.width + "x" + screen.height + " -depth 24\n")
     
-        await sleep(750)
-    
-        ssh.stdin.write(vncpassword + "\n")
-    
-    await sleep(300)
-        ssh.stdin.write(vncpassword + "\n")
-    
-    await sleep(300)
-    
-    ssh.stdin.write("n\n")
+
 
             
     
