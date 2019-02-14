@@ -12,4 +12,16 @@ electron-packager . --overwrite --platform=darwin --arch=x64  --prune=true --out
 cd $BUILD_DIR
 cd "Raspberry Pi Remote Desktop-darwin-x64"
 
+
+#This shouldn't be run automatically. People may simply want to download the source code and build the app themselves
+#Therefore, we should ask before creating the .xz file 
+
+
+read -n 1 -p "Should a compressed archive be created? (y/n): " BUILD_ARCHIVE
+
+
+if [ "$BUILD_ARCHIVE" == "y" ]
+then
 tar cvf - "Raspberry Pi Remote Desktop.app" | xz -zkvv9c > "Raspberry Pi Remote Desktop.app.tar.xz"
+fi
+
