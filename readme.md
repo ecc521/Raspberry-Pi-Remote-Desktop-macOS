@@ -19,31 +19,3 @@ How to build from source:
 
 
 
-
-
-
-
-
-
-How to Remote Desktop with terminal:
-
-First, ssh into pi:
-ssh piUsername@piipAddress
-
-
-In Pi:
-sudo apt-get install tightvncserver
-
-#Change vncserver password (optional)
-vncpasswd
-
-#A view only password is a second password that can view the screen, but cannot make changes
-
-#configure screen size and color depth
-vncserver :1 -geometry WIDTHxHEIGHT -depth 24
-
-
-
-On Mac:
-open vnc://myUsername@piIpAddress:5901
-- The password to use is the one input in the vnc server
