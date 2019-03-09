@@ -1,5 +1,5 @@
 {
-  "name": "electron-quick-start",
+  "name": "raspberry-pi-remote-desktop",
     "productName": "Raspberry Pi Remote Desktop",
   "version": "1.0.0",
     "electronVersion":"4.0.3",
