@@ -13,3 +13,9 @@ How to build from source:
 - cd into the directory
 - Run the build.sh shell script
 - Drag the app to your Applications folder (Optional)
+
+
+
+
+
+
