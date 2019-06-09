@@ -8,6 +8,7 @@
     <h1>Remote Desktop Setup</h1>
 
         <p>When you open this app for the first time after logging off, please wait 30 seconds for devices to show up below - we scan your entire local network<br>
+            Some networks, mostly corperate ones, may isolate devices. This may make the application unable to find the device, however if you put in the ip address it will still work.<br>
     Make sure your pi has SSH enabled. Please note that sudo passwords are currently unsupported
       </p>
 
@@ -23,28 +24,28 @@
       <br>
       <div id="devices">
       </div>
-      
+
       <style>
-          
+
           #devices > div > span {display:inline-block}
-          
+
           #devices > div > span:nth-child(1) {
               width:30%
           }
           #devices > div > span:nth-child(2) {
               width:20%
-          }          
+          }
           #devices > div > span:nth-child(3) {
               width:20%
           }
           #devices > div > span:nth-child(4) {
               width:30%
-          }      
-          
-          
-          
+          }
+
+
+
       </style>
-      
+
     <script>
       // You can also require other files to run in this process
         require('./scanner.js')
@@ -52,9 +53,9 @@
         require("./render.js")
         require("./remote.js")
         require("./password.js")
-        
+
 
     </script>
-      
+
   </body>
 </html>

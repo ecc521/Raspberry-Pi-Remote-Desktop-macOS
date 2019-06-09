@@ -1,7 +1,7 @@
 {
   "name": "raspberry-pi-remote-desktop",
     "productName": "Raspberry Pi Remote Desktop",
-  "version": "1.0.0",
+  "version": "1.0.1",
     "electronVersion":"4.0.3",
   "description": "Simple application for remote desktop into Raspberry Pi",
   "main": "main.js",
