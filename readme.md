@@ -3,7 +3,7 @@ How to install:
 - Unzip the archive
 - Drag the app to your Applications folder (Optional)
 
-Note: I don't currently pay Apple $99 per year to get a developer certificate - so to open the app you will have to go into System Preferences > Security and Privacy > Click "Open Anyway"
+Note: The app is not currently signed, so to open it you will have to go into System Preferences > Security and Privacy > Click "Open Anyway"
 
 
 Local Testing:
