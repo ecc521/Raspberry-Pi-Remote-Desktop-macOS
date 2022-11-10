@@ -19,6 +19,6 @@
   "author": "Tucker Willenborg",
   "license": "MPL-2.0",
   "devDependencies": {
-    "electron": "^4.0.3"
+    "electron": "^18.3.7"
   }
 }
